@@ -1,0 +1,34 @@
+{
+  "name": "@stheine/helpers",
+  "version": "1.0.3",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./eslint.config": "./eslint.config.js"
+  },
+  "files": [
+    "eslint.config.js",
+    "index.js",
+    "logger.js",
+    "mail.js"
+  ],
+  "scripts": {
+    "check": "npx depcheck",
+    "pub": "npm publish --access public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Heine <stheine@arcor.de>",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "1.11.10",
+    "depcheck": "1.4.7",
+    "eslint": "8.57.0",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-extended": "0.2.0",
+    "eslint-plugin-mocha": "10.4.1",
+    "eslint-plugin-unicorn": "51.0.1",
+    "globals": "14.0.0",
+    "nodemailer": "6.9.13"
+  }
+}
