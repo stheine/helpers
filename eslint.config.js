@@ -1,7 +1,6 @@
 /* eslint-disable quote-props */
 
 import eslintComments from 'eslint-plugin-eslint-comments';
-import extended       from 'eslint-plugin-extended';
 import globals        from 'globals';
 import mocha          from 'eslint-plugin-mocha';
 import unicorn        from 'eslint-plugin-unicorn';
@@ -34,7 +33,6 @@ export default [
     plugins: {
       unicorn,
       mocha,
-      extended,
       'eslint-comments': eslintComments,
     },
     rules: {
@@ -980,10 +978,6 @@ export default [
           'onlyEquality': false,
         },
       ],
-      'extended/consistent-err-names': [
-        'error',
-        'prefix',
-      ],
       'mocha/handle-done-callback': [
         'error',
         {
@@ -1057,12 +1051,6 @@ export default [
       ],
       'unicorn/escape-case': [
         'error',
-      ],
-      'unicorn/import-index': [
-        'error',
-        {
-          'ignoreImports': false,
-        },
       ],
       // 'unicorn/import-style': [
       //   'error',

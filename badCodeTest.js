@@ -195,9 +195,28 @@ const func = function() {
 
   try {
     a = bb;
+  } catch(err) {
+    a = err;
+  }
+
+  try {
+    a = bb;
+  } catch(subErr) {
+    a = subErr;
+  }
+
+  try {
+    a = bb;
     // eslint-disable-next-line unicorn/catch-error-name
-  } catch(something) {
-    a = something;
+  } catch(errApi) {
+    a = errApi;
+  }
+
+  try {
+    a = bb;
+    // eslint-disable-next-line unicorn/catch-error-name
+  } catch(result) {
+    a = result;
   }
 
   // eslint-disable-next-line no-cond-assign
