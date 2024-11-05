@@ -3,6 +3,7 @@
 import eslintComments from 'eslint-plugin-eslint-comments';
 import globals        from 'globals';
 import mocha          from 'eslint-plugin-mocha';
+import react          from 'eslint-plugin-react';
 import unicorn        from 'eslint-plugin-unicorn';
 
 export default [
@@ -26,6 +27,28 @@ export default [
 //
 //  settings: {},
 //  ignorePatterns: [],
+
+{
+    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
+    plugins: {
+      react,
+    },
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        ...globals.browser,
+      },
+    },
+    rules: {
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
+     },
+  },
+
   {
     languageOptions: {
       globals: globals.node,
@@ -48,7 +71,12 @@ export default [
         'allowVoid': false,
       }],
       'brace-style': ['error', '1tbs', {'allowSingleLine': false}],
-      'comma-dangle': [2, 'always-multiline'],
+      'comma-dangle': ['error', {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+      }],
       'curly': ['error', 'all'],
       'default-case': ['error'],
       'default-case-last': ['error'],
