@@ -28,7 +28,9 @@ export default [
 //  settings: {},
 //  ignorePatterns: [],
 
-{
+  mocha.configs.flat.recommended,
+
+  {
     files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
     plugins: {
       react,
@@ -1033,6 +1035,7 @@ export default [
       'mocha/no-identical-title': [
         'error',
       ],
+      'mocha/no-mocha-arrows': 0,
       'mocha/no-nested-tests': [
         'error',
       ],
@@ -1058,10 +1061,7 @@ export default [
         'error',
         '[^\\.]$',
       ],
-      'mocha/valid-test-description': [
-        'error',
-        '\\.$',
-      ],
+      'mocha/valid-test-description': 0,
       'unicorn/better-regex': [
         'error',
         {
