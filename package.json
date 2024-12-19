@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "check": "npx depcheck",
+    "lint": "eslint **/*.js",
     "pub": "npm publish --access public",
     "test": "mocha --ui tdd test"
   },
@@ -28,6 +29,7 @@
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-mocha": "10.5.0",
     "eslint-plugin-react": "7.37.2",
+    "eslint-plugin-react-hooks": "5.1.0",
     "eslint-plugin-unicorn": "56.0.1",
     "globals": "15.13.0",
     "mocha": "11.0.1",

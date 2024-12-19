@@ -4,6 +4,7 @@ import eslintComments from 'eslint-plugin-eslint-comments';
 import globals        from 'globals';
 import mocha          from 'eslint-plugin-mocha';
 import react          from 'eslint-plugin-react';
+import reactHooks     from 'eslint-plugin-react-hooks';
 import unicorn        from 'eslint-plugin-unicorn';
 
 export default [
@@ -34,21 +35,120 @@ export default [
     files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
     plugins: {
       react,
+      'react-hooks': reactHooks,
     },
     languageOptions: {
+      globals: globals.browser,
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
       },
-      globals: {
-        ...globals.browser,
+    },
+    settings: {
+      react: {
+        version: 'detect',
       },
     },
     rules: {
+      'react/destructuring-assignment': 0,
+      'react/display-name': 'warn',
+      'react/jsx-curly-newline': 0,
+      'react/jsx-curly-spacing': 0,
+      'react/jsx-first-prop-new-line': 0,
+      'react/jsx-fragments': 'warn',
+      'react/jsx-indent': 0,
+      'react/jsx-no-constructed-context-values': 0,
+      'react/jsx-props-no-multi-spaces': 0,
       'react/jsx-uses-react': 'error',
       'react/jsx-uses-vars': 'error',
-     },
+      'react-hooks/exhaustive-deps': 'error',
+      'react-hooks/rules-of-hooks': 'warn',
+      'react/jsx-boolean-value': 0,
+      'react/jsx-child-element-spacing': 'warn',
+      'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
+      'react/jsx-closing-tag-location': 'error',
+      'react/jsx-equals-spacing': ['error', 'never'],
+      'react/jsx-filename-extension': ['error', {
+        extensions: ['.jsx', '.tsx'],
+      }],
+      'react/jsx-handler-names': ['error', {
+        eventHandlerPrefix: 'handle',
+        eventHandlerPropPrefix: 'on',
+        checkLocalVariables: false,
+      }],
+      'react/jsx-indent-props': ['error', {indentMode: 2, ignoreTernaryOperator: false}],
+      'react/jsx-key': ['error', {
+        checkFragmentShorthand: true,
+        checkKeyMustBeforeSpread: true,
+      }],
+      'react/jsx-no-bind': ['error', {
+        ignoreRefs: false,
+        ignoreDOMComponents: false,
+        allowArrowFunctions: true,
+        allowBind: false,
+        allowFunctions: false,
+      }],
+      'react/jsx-no-comment-textnodes': 'error',
+      'react/jsx-no-duplicate-props': ['error', {ignoreCase: true}],
+      'react/jsx-no-target-blank': ['error', {
+        allowReferrer: false,
+        enforceDynamicLinks: 'always',
+        warnOnSpreadAttributes: true,
+      }],
+      'react/jsx-no-undef': ['error', {allowGlobals: false}],
+      'react/jsx-no-useless-fragment': 'error',
+      'react/jsx-curly-brace-presence': ['error', 'never'],
+      'react/jsx-pascal-case': ['error', {allowAllCaps: false, ignore: []}],
+      'react/jsx-tag-spacing': ['error', {
+        closingSlash: 'never',
+        beforeSelfClosing: 'always',
+        afterOpening: 'never',
+        beforeClosing: 'never',
+      }],
+      'react/jsx-wrap-multilines': 'error',
+      'react/no-access-state-in-setstate': 'error',
+      'react/no-array-index-key': 'error',
+      'react/no-children-prop': 'error',
+      'react/no-danger-with-children': 'error',
+      'react/no-deprecated': 'error',
+      'react/no-did-mount-set-state': 'error',
+      'react/no-did-update-set-state': 'error',
+      'react/no-direct-mutation-state': 'error',
+      'react/no-find-dom-node': 'error',
+      'react/no-is-mounted': 'error',
+      'react/no-redundant-should-component-update': 'error',
+      'react/no-render-return-value': 'error',
+      'react/no-string-refs': ['error', {noTemplateLiterals: true}],
+      'react/no-this-in-sfc': 'error',
+      'react/no-typos': 'error',
+      'react/no-unescaped-entities': 'error',
+      'react/no-unknown-property': 'error',
+      'react/no-unused-prop-types': 'error',
+      'react/no-unused-state': 'error',
+      'react/no-will-update-set-state': 'error',
+      'react/prefer-es6-class': ['error', 'always'],
+      'react/prefer-stateless-function': ['error', {
+        ignorePureComponents: false,
+      }],
+      'react/react-in-jsx-scope': 'error',
+      'react/require-render-return': 'error',
+      'react/self-closing-comp': ['error', {
+        component: true,
+        html: true,
+      }],
+      'react/sort-comp': 'error',
+      'react/sort-prop-types': ['error', {
+        callbacksLast: true,
+        ignoreCase: true,
+        requiredFirst: true,
+        sortShapeProp: true,
+        noSortAlphabetically: false,
+      }],
+      'react/state-in-constructor': ['error', 'always'],
+      'react/style-prop-object': 'error',
+      'react/void-dom-elements-no-children': 'error',
+    },
   },
 
   {
